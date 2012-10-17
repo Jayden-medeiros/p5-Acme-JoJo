@@ -2,10 +2,11 @@ package Acme::JoJo::Character;
 
 use Mouse;
 use UNIVERSAL::require;
+use Carp;
 
 has 'name_ja' => ( is => 'rw' );
 has 'name_en' => ( is => 'rw' );
-has '_stand' => ( is => 'rw' );
+has 'has_stand' => ( is => 'rw' );
 has 'lang' => (
     is => 'rw',
     default => 'ja',
@@ -39,7 +40,7 @@ sub _prefix_stand {
 
 sub stand {
     my $self = shift;
-    my $module = sprintf('%s::%s', $self->_prefix_stand, $self->_stand);
+    my $module = sprintf('%s::%s', $self->_prefix_stand, $self->has_stand);
     $module->require or die $@;
     return $module->new($self->_default_args);
 }

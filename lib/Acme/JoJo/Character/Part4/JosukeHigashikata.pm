@@ -6,7 +6,7 @@ extends qw/Acme::JoJo::Character/;
 
 has '+name_ja' => ( default => '東方仗助' );
 has '+name_en' => ( default => 'JosukeHigashikata' );
-has '+_stand' => ( default => 'CrazyDiamond' );
+has '+has_stand' => ( default => 'CrazyDiamond' );
 
 
 __PACKAGE__->meta->make_immutable();
