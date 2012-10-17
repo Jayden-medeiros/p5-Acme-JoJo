@@ -6,7 +6,7 @@ extends qw/Acme::JoJo::Stand/;
 
 has '+name_ja' => ( default => 'クレイジー・ダイヤモンド' );
 has '+name_en' => ( default => 'CrazyDiamond' );
-has '+_character' => ( default => 'JosukeHigashikata' );
+has '+has_character' => ( default => 'JosukeHigashikata' );
 has '+description_ja' => ( default => '近距離パワー型。触れた物体を直す。自分以外なら生物も治せるが、死者を生き返らせる事はできない。' );
 
 

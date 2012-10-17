@@ -6,7 +6,7 @@ use UNIVERSAL::require;
 has 'name_ja' => ( is => 'rw' );
 has 'name_en' => ( is => 'rw' );
 has 'description_ja' => ( is => 'rw' );
-has '_character' => ( is => 'rw' );
+has 'has_character' => ( is => 'rw' );
 has 'lang' => (
     is => 'rw',
     default => 'ja',
@@ -51,7 +51,8 @@ sub _prefix_character {
 
 sub character {
     my $self = shift;
-    my $module = sprintf('%s::%s', $self->_prefix_character, $self->_character);
+    return unless $self->has_character;
+    my $module = sprintf('%s::%s', $self->_prefix_character, $self->has_character);
     $module->require or die $@;
     return $module->new($self->_default_args);
 }
