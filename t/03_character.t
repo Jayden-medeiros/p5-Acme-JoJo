@@ -8,8 +8,13 @@ subtest 'Character Methods' => sub {
     my @characters = $jojo->characters;
     for my $character ( @characters ) {
         ok( $character->name, 'name()' );
-        ok( $character->stand, 'stand()' );
-        like( ref $character->stand, qr/^Acme::JoJo::Stand::Part\d+::/, 'stand() returns object of Acme::JoJo::Stand::Part\d+::' );
+        if( $character->has_stand ) {
+            ok( $character->stand, 'stand()' );
+            like( ref $character->stand, qr/^Acme::JoJo::Stand::Part\d+::/, 'stand() returns object of Acme::JoJo::Stand::Part\d+::' );
+        }
+        else {
+            is( $character->stand, undef, 'stand() - if dont have a stand' );
+        }
     }
 };
 
@@ -18,9 +23,14 @@ subtest 'Character Methods ( lang => en )' => sub {
     my @characters = $jojo->characters;
     for my $character ( @characters ) {
         ok( $character->name, 'name()' );
-        ok( $character->stand, 'stand()' );
         like( $character->name, qr/^[a-zA-Z0-9]+$/, 'name() returns half-width alphanumeric' );
-        like( ref $character->stand, qr/^Acme::JoJo::Stand::Part\d+::/, 'stand() returns object of Acme::JoJo::Stand::Part\d+::' );
+        if( $character->has_stand ) {
+            ok( $character->stand, 'stand()' );
+            like( ref $character->stand, qr/^Acme::JoJo::Stand::Part\d+::/, 'stand() returns object of Acme::JoJo::Stand::Part\d+::' );
+        }
+        else {
+            is( $character->stand, undef, 'stand() - if dont have a stand' );
+        }
     }
 };
 

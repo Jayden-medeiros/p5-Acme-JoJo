@@ -40,6 +40,7 @@ sub _prefix_stand {
 
 sub stand {
     my $self = shift;
+    return unless $self->has_stand;
     my $module = sprintf('%s::%s', $self->_prefix_stand, $self->has_stand);
     $module->require or die $@;
     return $module->new($self->_default_args);
@@ -74,6 +75,8 @@ Acme::JoJo::Character is Base module for characters.
 =head2 name
 
 =head2 stand
+
+  my $stand = $jojo->stand if $jojo->has_stand;
 
 =head1 AUTHOR
 
