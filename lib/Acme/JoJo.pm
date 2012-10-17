@@ -51,7 +51,8 @@ sub _get_modules {
     my $self = shift;
     my $args = shift;
     my $prefix = $args->{prefix};
-    $prefix = sprintf('%s/Part%s', $prefix, $args->{part}) if defined $args->{part};
+    my $part_num = defined $args->{part} ? $args->{part} : '*';
+    $prefix = sprintf('%s/Part%s', $prefix, $part_num);
     return $self->_search_files({ path => $self->_base_search_path, prefix => $prefix });
 }
 
