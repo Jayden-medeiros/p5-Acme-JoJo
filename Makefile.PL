@@ -2,7 +2,8 @@ use inc::Module::Install;
 name 'Acme-JoJo';
 all_from 'lib/Acme/JoJo.pm';
 
-# requires '';
+requires 'UNIVERSAL::require';
+requires 'File::Zglob';
 
 tests 't/*.t';
 author_tests 'xt';
