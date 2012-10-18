@@ -1,0 +1,24 @@
+package Acme::JoJo::Stand::Part7::D4CLoveTrain;
+
+use utf8;
+use Mouse;
+extends qw/Acme::JoJo::Stand/;
+
+has '+name_ja' => ( default => 'ディー・フォー・シー・ラブトレイン' );
+has '+name_en' => ( default => 'D4CLoveTrain' );
+has '+has_character' => ( default => 'FunnyValentine' );
+has '+description_ja' => ( default => '聖人の遺体と一体化したルーシーを基点に生まれた「空間の隙間」に入り込む事で、自らに加えられた害悪を退ける。退けられた害悪は世界のどこかで誰かが強制的に被る事になる。' );
+
+
+__PACKAGE__->meta->make_immutable();
+
+no Mouse;
+
+1;
+__END__
+
+=head1 NAME
+
+Acme::JoJo::Stand::Part7::D4CLoveTrain - ディー・フォー・シー・ラブトレイン
+
+=cut
