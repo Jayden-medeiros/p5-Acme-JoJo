@@ -3,6 +3,7 @@ package Acme::JoJo::Character::Role::GrowUp;
 use strict;
 use warnings;
 use Mouse::Role;
+use Carp;
 
 has 'has_stands' => ( is => 'ro', default => sub {[]} );
 has 'growing_count' => ( is => 'rw', default => 0 );
@@ -24,7 +25,7 @@ sub grow_up {
         $self->_change_stand;
     }
     else {
-        warn "Can't grow up more than this!";
+        carp "Can't grow up more than this!";
     }
 }
 
