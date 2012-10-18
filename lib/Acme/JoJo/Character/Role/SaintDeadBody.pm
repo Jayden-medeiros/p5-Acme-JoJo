@@ -4,12 +4,10 @@ use strict;
 use warnings;
 use Mouse::Role;
 use Carp;
-
-use constant INVALID => 0;
-use constant VALID => 1;
+use Acme::JoJo::Constants qw( :saint_dead_body );
 
 has 'has_another_stand' => ( is => 'rw' );
-has 'has_perfect_saint_dead_body' => ( is => 'rw', default => INVALID );
+has 'has_perfect_saint_dead_body' => ( is => 'rw', default => NO );
 
 sub BUILD {
     my $self = shift;
@@ -29,7 +27,7 @@ sub get_perfect_saint_dead_body {
         carp "already have perfect saint dead body!";
     }
     else {
-        $self->has_perfect_saint_dead_body(VALID);
+        $self->has_perfect_saint_dead_body(YES);
         $self->_switch_stand;
     }
 }
@@ -37,7 +35,7 @@ sub get_perfect_saint_dead_body {
 sub lose_perfect_saint_dead_body {
     my $self = shift;
     if( $self->has_perfect_saint_dead_body ) {
-        $self->has_perfect_saint_dead_body(INVALID);
+        $self->has_perfect_saint_dead_body(NO);
         $self->_switch_stand;
     }
     else {
