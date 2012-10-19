@@ -8,7 +8,7 @@ with 'Acme::JoJo::Stand::Role::GrowUp';
 has '+name_ja' => ( default => 'エコーズ・アクト1' );
 has '+name_en' => ( default => 'EchoesAct1' );
 has '+has_character' => ( default => 'KouichiHirose' );
-has '+description_ja' => ( default => 'トカゲのような姿をした遠隔操作型。音を物体に染み込ませる能力を持つ。' );
+has '+about_ja' => ( default => 'トカゲのような姿をした遠隔操作型。音を物体に染み込ませる能力を持つ。' );
 has '+growing_count' => ( default => 0 );
 
 

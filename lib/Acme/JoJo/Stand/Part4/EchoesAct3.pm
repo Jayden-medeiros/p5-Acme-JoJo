@@ -8,7 +8,7 @@ with 'Acme::JoJo::Stand::Role::GrowUp';
 has '+name_ja' => ( default => 'エコーズ・アクト3' );
 has '+name_en' => ( default => 'EchoesAct3' );
 has '+has_character' => ( default => 'KouichiHirose' );
-has '+description_ja' => ( default => '近距離パワー型。殴った対象が本体に近づくとそれに比例して加重を与える。' );
+has '+about_ja' => ( default => '近距離パワー型。殴った対象が本体に近づくとそれに比例して加重を与える。' );
 has '+growing_count' => ( default => 2 );
 
 

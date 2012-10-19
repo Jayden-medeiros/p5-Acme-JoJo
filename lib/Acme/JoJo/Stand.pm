@@ -5,7 +5,7 @@ use UNIVERSAL::require;
 
 has 'name_ja' => ( is => 'rw' );
 has 'name_en' => ( is => 'rw' );
-has 'description_ja' => ( is => 'rw' );
+has 'about_ja' => ( is => 'rw' );
 has 'has_character' => ( is => 'rw' );
 has 'lang' => (
     is => 'rw',
@@ -30,15 +30,15 @@ sub name {
     return $self->$name;
 }
 
-sub _description {
+sub _about {
     my $self = shift;
-    return 'description_ja'; # XXX if you can write description with another langueage
+    return 'about_ja'; # XXX if you can write with another langueage
 }
 
-sub description {
+sub about {
     my $self = shift;
-    my $description = $self->_description;
-    return $self->$description;
+    my $about = $self->_about;
+    return $self->$about;
 }
 
 sub _prefix_character {
@@ -85,7 +85,7 @@ Acme::JoJo::Stand is Base module for stands.
 
 =head2 name
 
-=head2 description
+=head2 about
 
 =head2 character
 

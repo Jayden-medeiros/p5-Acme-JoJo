@@ -8,7 +8,7 @@ with 'Acme::JoJo::Stand::Role::GrowUp';
 has '+name_ja' => ( default => 'エコーズ・アクト2' );
 has '+name_en' => ( default => 'EchoesAct2' );
 has '+has_character' => ( default => 'KouichiHirose' );
-has '+description_ja' => ( default => 'しっぽを擬音へと変えて、その擬音通りの現象を発生させる。' );
+has '+about_ja' => ( default => 'しっぽを擬音へと変えて、その擬音通りの現象を発生させる。' );
 has '+growing_count' => ( default => 1 );
 
 

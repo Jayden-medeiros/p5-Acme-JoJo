@@ -9,7 +9,7 @@ subtest 'Stand Methods' => sub {
     for my $stand ( @stands ) {
         ok( $stand->name, 'name()' );
         ok( $stand->character, 'character()' );
-        ok( $stand->description, 'description()' );
+        ok( $stand->about, 'about()' );
         like( ref $stand->character, qr/^Acme::JoJo::Character::Part\d+::/, 'character() returns object of Acme::JoJo::Character::Part\d+::' );
     }
 };
@@ -20,10 +20,10 @@ subtest 'Stand Methods ( lang => en )' => sub {
     for my $stand ( @stands ) {
         ok( $stand->name, 'name()' );
         ok( $stand->character, 'character()' );
-        ok( $stand->description, 'description()' );
+        ok( $stand->about, 'about()' );
         like( $stand->name, qr/^[a-zA-Z0-9]+$/, 'name() returns half-width alphanumeric' );
         like( ref $stand->character, qr/^Acme::JoJo::Character::Part\d+::/, 'character() returns object of Acme::JoJo::Character::Part\d+::' );
-        unlike( $stand->description, qr/^[a-zA-Z0-9_ ]+$/, 'description() returns only lang ja' ); # XXX if add description_en or others, modify this code.
+        unlike( $stand->about, qr/^[a-zA-Z0-9_ ]+$/, 'about() returns only lang ja' ); # XXX if add about_en or others, modify this code.
     }
 };
 
