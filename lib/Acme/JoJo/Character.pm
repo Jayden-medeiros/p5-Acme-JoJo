@@ -2,7 +2,6 @@ package Acme::JoJo::Character;
 
 use Mouse;
 use UNIVERSAL::require;
-use Carp;
 
 has 'name_ja' => ( is => 'rw' );
 has 'name_en' => ( is => 'rw' );
