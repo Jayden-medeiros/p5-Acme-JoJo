@@ -4,7 +4,7 @@ use utf8;
 use Mouse;
 extends qw/Acme::JoJo::Stand/;
 with 'Acme::JoJo::Stand::Role::SaintDeadBody';
-use Acme::JoJo::Constants qw( :saint_dead_body );
+use Acme::JoJo::Constants qw( :common );
 
 has '+name_ja' => ( default => 'ディー・フォー・シー・ラブトレイン' );
 has '+name_en' => ( default => 'D4CLoveTrain' );

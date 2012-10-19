@@ -4,14 +4,14 @@ use warnings;
 use parent qw(Exporter);
 our @EXPORT_OK = ();
 our %EXPORT_TAGS = (
-    saint_dead_body => [qw(NO YES)],
+    common => [qw(NO YES)],
 );
 
 our $DATA = {};
 __PACKAGE__->build_export_ok();
 __PACKAGE__->make_hash_ref();
 
-# saint_dead_body
+# common
 use constant NO  => 0;
 use constant YES => 1;
 

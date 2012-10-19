@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Mouse::Role;
 use Carp;
-use Acme::JoJo::Constants qw( :saint_dead_body );
+use Acme::JoJo::Constants qw( :common );
 
 has 'has_another_stand' => ( is => 'rw' );
 has 'has_perfect_saint_dead_body' => ( is => 'rw', default => NO );
