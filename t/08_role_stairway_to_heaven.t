@@ -3,6 +3,8 @@ use warnings;
 use Test::More;
 use Acme::JoJo::Character::Part6::EnricoPucci;
 use Acme::JoJo::Stand::Part6::WhiteSnake;
+use Acme::JoJo::Stand::Part6::CMoon;
+use Acme::JoJo::Stand::Part6::MadeInHeaven;
 
 subtest 'Role Stairway To Heaven (EnricoPucci)' => sub {
     my $father = Acme::JoJo::Character::Part6::EnricoPucci->new();
@@ -79,5 +81,27 @@ subtest 'Role Stairway To Heaven (EnricoPucci)' => sub {
         };
     }
 };
+
+subtest 'Role Stairway To Heaven (WhiteSnake)' => sub {
+    my $stand = Acme::JoJo::Stand::Part6::WhiteSnake->new();
+    my $father = $stand->character;
+    my $stand_from_father = $father->stand;
+    is( ref $stand_from_father, 'Acme::JoJo::Stand::Part6::WhiteSnake', 'father from white snake has white snake' );
+};
+
+subtest 'Role Stairway To Heaven (CMoon)' => sub {
+    my $stand = Acme::JoJo::Stand::Part6::CMoon->new();
+    my $father = $stand->character;
+    my $stand_from_father = $father->stand;
+    is( ref $stand_from_father, 'Acme::JoJo::Stand::Part6::CMoon', 'father from c-moon has c-moon' );
+};
+
+subtest 'Role Stairway To Heaven (MadeInHeaven)' => sub {
+    my $stand = Acme::JoJo::Stand::Part6::MadeInHeaven->new();
+    my $father = $stand->character;
+    my $stand_from_father = $father->stand;
+    is( ref $stand_from_father, 'Acme::JoJo::Stand::Part6::MadeInHeaven', 'father from made in heaven has made in heaven' );
+};
+
 
 done_testing();
